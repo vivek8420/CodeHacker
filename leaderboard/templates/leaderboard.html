@@ -1,0 +1,43 @@
+{% extends 'header.html' %}
+{% block content %}
+<html>
+<head>
+<style>
+ table{
+                font-family: arial,sans-serif;
+                border-collapse: collapse;
+                width: 40%;
+            }
+			td,th{
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 30px;
+            }
+            body{
+                background-color: grey;
+            }
+</style>
+</head>
+<body>
+    <center><table>
+        <tr>
+            <th>Rank</th>
+            <th>User Id</th>
+            <th>Time</th>
+            <th>Challenge</th>
+            <th>Result</th>
+        </tr>
+        {% for tmp in temp %}
+				<tr>
+					<td>1</td>
+					<td>{{tmp.user_id}}</td>
+					<td>{{tmp.time}}</td>
+					<td>{{tmp.challenge_code}}</td>
+					<td>{{tmp.maxscore}}</td>
+				</tr>
+			{% endfor %}
+    </table>
+</center>
+</body>
+</html>
+{%endblock%}

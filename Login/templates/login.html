@@ -1,0 +1,117 @@
+{% block content %}
+<html>
+<head>
+<style>
+body{
+	 background-image:url(https://images5.alphacoders.com/430/thumb-350-430919.png);
+}
+.main {
+	width:400px;
+    height:320px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+	 padding: 50px;
+	 margin:8px 0;
+	 background-color:black;
+      border-radius: 8px;
+	  border:2px solid green;
+}
+.tbox input{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  transition: 0.25s;
+   border-radius:50px;
+     margin:8px 0;
+	 -webkit-transition: width 1s;
+		transition: width 1s;
+
+}
+.tbox  input[type="text"]:focus,.tbox input[type="password"]:focus
+{
+	width: 280px;
+	border-color: #2ecc71;
+}
+.tbox input:hover{
+width: 30%;
+border-radius:50px;
+}
+input[type=submit] {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+   color: white;
+   background-color:SkyBlue;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+ opacity: 0.8;    
+ 	background: #2ecc71;
+	}
+button{
+	width: 200px;
+	padding: 12px 20px;
+	margin: 8px 0;
+    background-color: SkyBlue;
+    color: white;
+    cursor: pointer;
+	border-radius: 50px;
+	  font-size: 20px;
+}
+ button:hover {
+    opacity: 0.8;
+	background: #2ecc71;
+    }
+label{
+  text-align: center;
+  font-size:17px;
+  color:SkyBlue;
+}
+.a{
+	text-align: right;
+}
+.set{
+	color:red;
+	font-size:20px;
+}
+</style>
+</head>
+<body>
+<center><h1>Login Page</h1></center>
+<center>
+<div class="set">
+		{% if messages %}
+		{% for message in messages%}
+		{{ message}}
+		{% endfor%}
+	{% endif%}
+	</div>
+</center>
+<div class="main">
+	<form action="/Login/auth_view/" method = "post">{% csrf_token %}<br>
+     <label for="uname">User Name</label>
+	 <div class="tbox">
+    <input type="text" id="uname" name="username" placeholder="User name" required>
+     </div>
+	 <label for="password">Password</label>
+    <div class="tbox">
+	<input type="password" id="pass" name="password" placeholder="Enter password" required>
+    </div>
+	
+	<input type="submit" value="SIGN IN">
+  </form>
+	<form action="/Profile/new_registration/" method="post">{% csrf_token %}<br>
+	<button type="submit">SIGN UP</button>
+	<div class="a">
+		<a href="/forgot_pass/f_password/">Forgot password?</a>
+	</div>
+	</form>
+</div>
+</body>
+</html>
+{% endblock %}

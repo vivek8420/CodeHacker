@@ -1,0 +1,130 @@
+{% extends 'header.html' %}
+{% block content %}
+<html>
+    <head>
+        <style>
+			.floatLeft { 
+				width: 69%; 
+				float: left; 
+				font-size:30px;
+				border: ridge;
+				height: 300%;
+			}
+			.floatRight {
+				width: 30%; 
+				float: right;
+				font-size:30px;
+				border: ridge;
+				height: 300%;
+			}
+            table{
+                font-family: arial,sans-serif;
+                border-collapse: collapse;
+                width: 60%;
+            }
+            td{
+                border: 0px solid #dddddd;
+                text-align: left;
+                padding: 3px;
+                background-color:#f1f1f1;
+            }     
+				.a
+			{
+			 text-indent:50px;
+			}
+        </style>
+    </head>
+    <body>
+            <center><h1>Mayur and Max Sum</h1></center>
+            <center><table>
+                <tr>
+                    <td>Author:</td>
+                    <td>mayur_1439</td>
+                </tr>
+                <tr>
+                    <td>Time Limit:</td>
+                    <td>1 second</td>
+                </tr>
+                <tr>
+                    <td>Source Limit:</td>
+                    <td>50000 Bytes</td>
+                </tr>
+                <tr>
+                    <td>Input:</td>
+                    <td>Standard Input</td>
+                </tr>    
+                <tr>
+                    <td>Output:</td>
+                    <td>Standard Output</td>
+                </tr>
+                <tr>
+                    <td>Languages:</td>
+                    <td>C,CPP14,JAVA,PYTH,PYTH 3.6</td>
+                </tr>
+            </table>
+            </center>
+            <hr>
+<div class="floatLeft">
+			<b>Question</b>
+		<div class="a">
+            <p>
+                      Vivek want to check programming skill of mayur. So, He gives sequence  A1,A2,........,An  of n elements to Mayur and give task 
+				to choose some elements in sequence and  maximize sum of chosen elements, but mayur can not choose adjecent element. 
+				  
+            </p>
+			<p>
+			      If two element are called adjecent, if they share side.
+            <hr>
+            <b>Input</b>
+               
+            <p>
+                The first line contains an integer T,total number
+                of testcases.
+            </p>
+			<p>
+			  For each test cases, first line N ,no of elements.</br>
+			  Second line N space separated numbers.
+            <hr>
+            <b>Output</b>
+            <p>
+                Print One integer for each test cases , maximum some of chosen elements.
+            </p>
+            <hr>
+            <b>Constraints</b><br><br>
+                1 &le; T &le; 1000<br>
+                10 &le; N &le; 10<sup>5</sup><br>
+				10<sup>-5</sup> &le; Ai &le; 10<sup>5</sup>
+				where 1 &le; i &le; N
+            <hr>
+            <b>Example</b><br><br>
+            <b>Input</b>
+            <dl>
+                <dt>1</dt>
+                <dt>4</dt>
+                <dt>1 2 3 4</dt>
+            </dl>
+            <b>Output</b>
+            <dl>
+                <dt>6</dt>
+            </dl>
+            <hr><hr>
+			 <b>Explanation:</b>
+			  <p>  here, only total possiblity of chosen elements are 1, 2 ,3 ,4 , (1,3), (1,4), (2,4).
+                   But Maximum sum is set (2,4),so  answer is 2 + 4 = 6.
+              </p>
+		</div>
+</div>
+<div class="floatRight">    
+	<center>
+		<br><br>
+			For All Submissions<br>
+			<a href="/online_judge/all_submission/">Click here</a><br><br><br>
+			For My Submissions<br>
+			<a href="/online_judge/my_submission/">Click here</a><br><br><br>
+			Submit<br>
+			<a href="/online_judge/upload_file/">Click here</a>
+		</center>
+</div>	
+    </body>
+</html>
+{% endblock %}

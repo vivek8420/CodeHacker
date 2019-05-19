@@ -1,0 +1,102 @@
+{% extends 'header.html'%}
+{% block content%}
+<html>
+<head>
+<style>
+  body{
+    background-color: grey;
+  }
+		.floatLeft { 
+		width: 69%; 
+		float: left; 
+		font-size:30px;
+		border: ridge;
+		height: 120%;
+		}
+        .floatRight {
+		width: 30%; 
+		float: right;
+		font-size:30px;
+		border: ridge;
+		height: 120%;
+		}
+.tbox input{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  transition: 0.25s;
+   border-radius:50px;
+     margin:8px 0;
+   -webkit-transition: width 1s;
+    transition: width 1s;
+  border-color: black;  
+}
+.tbox  input[type="text"]:focus
+{
+  width: 250px;
+  border-color: #2ecc71;
+}
+.tbox input:hover{
+width: 30%;
+border-radius:50px;
+}		
+		input[type=submit] {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+   color: white;
+   background-color:SkyBlue;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+ opacity: 0.8;    
+ 	background: #2ecc71;
+	}
+</style>
+</head>
+<body>
+
+<div class="floatRight">
+<center>
+	<br>
+	<b>Upcoming Event</b><br>
+	   {{ch_name}}<br>
+	   {{s_time}}<br><br>
+	<hr>
+	<b>Search User</b><br>
+	<form action="/Profile/search_user/" method="post">{% csrf_token %}
+		<div class="tbox">
+		<input type="text" name="user" placeholder="Search User"><br><br>
+		</div>
+		<input type="submit" value="Search"><br><br>
+	</form>
+	<hr>
+	<b>To view all submissions</b><br>
+	<a href="/online_judge/home_submission/">click here</a><br><br><br>
+</center>
+</div>
+<div class="floatLeft">
+  <br>
+  <b>CodeHacker {{ch_name}} (Rated for all)</b><br>
+	Hello , CodeHacker!<br>
+	<p>I am pleased to invite you to CodeHacker {{ch_name}}, which will start on {{s_time}}. This is rated Challenge 
+	for everyone. All others can take part out of the competition only CodeHacker Id required.
+    </p>
+    <p>
+    	<h3>Note that the penalty for incorrect submissions in this round is 10 minutes.</h3>
+    </p>
+    <p>
+    	Problem Setter:<br>
+    	   &nbsp &nbsp - mayur1439<br>
+    	   &nbsp &nbsp - savaliya_vivek
+    </p>
+    <p>
+    	Good luck on the round<br>
+    	&nbsp &nbsp - By  vivek8420
+    </p>
+</div>
+</body>
+</html>
+{% endblock %}

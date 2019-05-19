@@ -1,0 +1,93 @@
+{% extends 'header.html' %}
+{% block content %}
+<html>
+<head>
+<style>
+ table{
+                font-family: arial,sans-serif;
+                border-collapse: collapse;
+                width: 40%;
+                background-color: grey;
+            }
+			td
+            {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 30px;
+                
+            }
+            .floatLeft{
+                float:left;
+                width:59%;
+            }
+            .floatRight{
+                float:left;
+                width:40;
+                font-size: 20px;
+            }
+            .space{
+                height:35%;
+            }
+            .color{
+                color:red;
+                font-size: 40px;
+                text-align:center;
+            }
+            button{
+    width: 200px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background-color: SkyBlue;
+    color: white;
+    cursor: pointer;
+    border-radius: 50px;
+      font-size: 20px;
+}
+ button:hover {
+    opacity: 0.8;
+    background: #2ecc71;
+    }
+    body{
+        background-color: grey;
+    }
+</style>
+</head>
+<body>
+    {% if messages %}
+    <div class='color'>
+        {% for ms in messages %}
+            {{ms}}
+        {% endfor %}
+    </div>
+
+    {% else %}
+    <div class="floatLeft">
+    <center>
+        <table>
+        <tr>
+            <td><h1>Name</h1></td>
+            <td><h1>Code</h1></td>
+            <td><h1>Difficulty</h1></td>
+        </tr>
+        {% for tmp in temp %}
+        <tr>
+            <td><a href='/Home_Module/view_problem/?problem={{tmp.problem_code}}'>{{tmp.problem_name}}</a></td>
+            <td>{{tmp.problem_code}}</td>
+            <td>{{tmp.difficulty}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+</div>
+<div class="floatRight">
+    <div class="space"></div>
+    <center>
+        <form action="/leaderboard/compute_leaderboard/ " method="post">{% csrf_token %}
+            <button type="submit">ViewLeaderBoard</button> 
+        </form>
+    </center>
+</div>
+   {% endif %}
+</body>
+</html>
+{%endblock%}

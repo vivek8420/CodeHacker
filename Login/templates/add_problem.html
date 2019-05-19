@@ -1,0 +1,68 @@
+{% extends 'header.html'%}
+{% block content%}
+<html>
+<head>
+<style>
+	table{
+                font-family: arial,sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+			 td{
+                padding: 20px;
+				background-color:grey;
+            }
+            .tbox input{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  transition: 0.25s;
+   border-radius:50px;
+     margin:8px 0;
+	 -webkit-transition: width 1s;
+		transition: width 1s;
+		border-color:green;
+
+}
+.tbox  input[type="text"]:focus
+{
+	border-color: #2ecc71;
+}
+.tbox input:hover{
+	border-radius:50px;
+}
+input[type=submit] {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+   color: white;
+   background-color:SkyBlue;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+ opacity: 0.8;    
+ 	background: #2ecc71;
+	}			
+</style>
+</head>
+<body>
+	{% if messages %}
+		{% for msg in messages %}
+				{{msg}}
+		{% endfor%}
+	{% endif %}
+<form action="/Login/store_problem/" method="post">{% csrf_token%}
+ <table>
+	<tr><td>Challenge Code:</td><td><div class="tbox"><input type="text" name="ch_code" required></div></td>
+	</tr>
+	<tr><td>Problem Name:</td><td><div class="tbox"><input type="text" name="p_name"  required></div></td></tr>
+	<tr><td>Problem Code:</td><td><div class="tbox"><input type="text" name="p_code" required></div></td></tr>
+	<tr><td>Difficulty:</td><td><div class="tbox"><input type="text" name="diff" required></div></td></tr>
+	<tr><td></td><td><input type="submit" id="new_submit" value="add"></td></tr>
+		</table>
+</form>
+</body>
+</html>
+{% endblock%}

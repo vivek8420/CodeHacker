@@ -1,0 +1,96 @@
+{% block content %}
+<html>
+<head>
+<style>
+	.main {
+  width:300px;
+    height:230px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+   padding: 50px;
+   margin:8px 0;
+   background-color:black;
+      border-radius: 8px;
+    border:2px solid green;
+}
+.tbox input{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  transition: 0.25s;
+   border-radius:50px;
+     margin:8px 0;
+   -webkit-transition: width 1s;
+    transition: width 1s;
+
+}
+.tbox  input[type="text"]:focus,.tbox input[type="password"]:focus
+{
+  width: 250px;
+  border-color: #2ecc71;
+}
+.tbox input:hover{
+width: 30%;
+border-radius:50px;
+}
+input[type=submit] {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+   color: white;
+   background-color:SkyBlue;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+ opacity: 0.8;    
+  background: #2ecc71;
+  }
+
+label{
+  text-align: center;
+  font-size:17px;
+  color:SkyBlue;
+}
+.setcolor{
+  color:red;
+}
+</style>
+</head>
+<body>	
+<div class="main">
+  <form action="/forgot_pass/set_password/" method="post">{% csrf_token %}<br>
+    <label>Enter New Password:</label><br>
+    <div class="tbox">
+    <input type="password"  id="pass" name="pass" placeholder="new_password" required><br><br>
+    <label>Re-Enter New Password:</label><br>
+    <input type="password" id="repass" name="repass" placeholder="reenter_password" required><br><br>
+    <input type="hidden" name="u_id" value="{{user_id}}" />
+</div>
+    <input type="submit" value="verify" onclick="return validate()">
+  </form>
+</div>
+<script>
+function validate()
+{
+  var x,y,text;
+  x=document.getElementById("pass").value;
+  y=document.getElementById("repass").value;
+  if(x==y)
+  {
+     return true;
+  }
+  else
+  {
+    alert("Password don't match!")
+    return false;
+  }
+}
+</script>
+</body>
+</html>
+{% endblock %}

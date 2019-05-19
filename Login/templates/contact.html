@@ -1,0 +1,115 @@
+{% extends 'header.html' %}
+{% block content %}
+<html>
+<head>
+<style>
+		.all{
+			border:ridge;
+			font-size:20px;
+		}
+		.he{
+			height:1100px;
+		}
+		.floatLeft{
+			float:left;
+			width:50%;
+			height:100%;
+		}
+		.floatRight{
+			float:Right;
+			width:50%;
+			height:100%;
+		}
+		.left{
+			float:left;
+			width:50%;
+		}
+		.right{
+			float:right;
+			width:50%;
+		}
+		.vl {
+			border-left: 2px ridge;
+			height: 1130px;
+			position: absolute;
+			left: 50%;
+			margin-left: -3px;
+			top: 300px;
+		}
+		.space{
+			height:25%;
+		}
+		body{
+			background-color: grey;
+		}
+</style>
+</head>
+<body>
+<div class="all">
+<h1>Contact Us</h1>
+<div class="he">
+<div class="floatLeft">
+	<div class="left"><center><img src="/static/feedback.jpg"><center></div>
+	<div class="right">
+	<b>Feedback</b>
+	<p>For any kind of input you would like to give the guys at CodeHacker,<br>
+	feedback@codehacker.com</p>
+	</div>
+	<div class="space"></div>
+	<div class="left"><center><img src="/static/host_contest.jpg"><center></div>
+	<div class="right">
+	<b>Host Your Contest</b><br>
+	<p>If you would like to host your own contest on CodeHacker,<br>
+	contest@codehacker.com</p>
+	</div>
+	<div class="space"></div>
+	<div class="left"><center><img src="/static/media_pr.jpg"><center></div>
+	<div class="right">
+	<b>Media/PR Activities</b><br>
+	<p>For Media/PR Activities of any kind, write us<br>
+	pr@codehacker.com</p>
+	</div>
+	<div class="space"></div>
+	<div class="left"><center><img src="/static/copyright.jpg"><center></div>
+	<div class="right">
+	<b>Copyright Violations</b><br>
+	<p>To report copyright violations, write us<br>
+	copyright@codehacker.com</p>
+	</div>
+</div>
+<div class="vl"></div> 
+<div class="floatRight">
+	<div class="left"><center><img src="/static/bug.jpg"><center>
+	</div>
+	<div class="right">
+	<b>Bugs</b><br>
+	<p>If you spot a bug of any kind, write us<br>
+	bugs@codehacker.com</p>
+	</div>
+	<div class="space"></div>
+	<div class="left"><center><img src="/static/be-setter-tester.jpg"><center></div>
+	<div class="right">
+	<b>Be a Problem Setter / Tester</b>
+	<p>To be a problem setter/tester for CodeHacker,<br>
+	problems@codehacker.com</p>
+	<p>Check out our Problem Setting/Testing page for more details</p>
+	</div>
+	<div class="space"></div>
+	<div class="left"><center><img src="/static/gfg.jpg"><center></div>
+	<div class="right">
+	<b>Vivek&Company’s Go for Gold Initiative</b>
+	<p>goforgold@codehacker.com</p>
+	<p>For any kind of information regarding Vivek&Company’s Go for Gold Initiative, write us</p>
+	</div>
+	<div class="space"></div>
+	<div class="left"><center><img src="/static/location.jpg"><center></div>
+	<div class="right">
+	<b>Locate Us</b>
+	<p>Chanakya Park,Kishan Samosa Lane,Nadiad-387001</p>
+	</div>
+</div>
+</div>
+</div>
+</body>
+</html>
+{% endblock %}

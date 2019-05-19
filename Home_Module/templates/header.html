@@ -1,0 +1,85 @@
+<html>
+<head>
+<style>
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+lr
+ {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+lr a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+lr a:hover {
+  background-color: #111;
+}
+
+li a:hover {
+  background-color: #111;
+}
+img{
+  width: 200px;
+  height:200px;
+  border-radius: 80%;
+  border: 2px solid green;
+}
+.bcolor{
+  background-image:url(https://images5.alphacoders.com/430/thumb-350-430919.png);
+}
+</style>
+</head>
+<body>
+  <div class="bcolor">
+  <div class="try">
+  <center><img src="/static/codehacker.png"></center>
+</div>
+</div>
+<ul>
+  <li><a href="/Profile/home/">Home</a></li>
+  <li><a href="/Home_Module/compete/">Compete</a></li>
+  <li><a href="/Home_Module/practice/">Practice</a></li>
+  <li><a href="/Login/contact/">Contact</a></li>
+  <li><a href="/Login/about/">About</a></li>
+  <lr><a href='/Login/logout/'>Log Out</a></lr>
+  {% if request.user.is_superuser%}
+      <lr><a href='/Login/admin/'>admin {{request.user.username}}</a></lr>
+  {% else %}      
+  <lr><a href="/Profile/login_user_profile/">Hello {{request.user.username}}</a></lr>
+  {% endif%}
+</ul>
+{% block content %}
+{% endblock %}
+</body>
+</html>

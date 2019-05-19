@@ -1,0 +1,83 @@
+{% extends 'header.html' %}
+{% block content %}
+<html>
+    <head>
+        <style>
+          body{
+              background-color: grey;
+          }
+            table {
+                 border-collapse: collapse;
+                  width:80%;
+                 height:50px;
+                  }
+             table, td {
+                padding:15px;
+                border: 1px solid black;
+                text-align: center;
+                 }
+
+              tr:hover {background-color:white;}
+              tr:nth-child(odd) {background-color: skyblue;}
+          }
+          </style>
+    </head>
+    <body>
+       <center>
+    <h1>Present Contests</h1>
+        <table>
+            <tr>
+                <td><b>NAME</b></td>
+                <td><b>CODE</b></td>
+                <td><b>START TIME</b></td>
+                <td><b>END TIME</b></td>
+            </tr>
+          {% for tmp in temp2 %}
+              <tr>
+                  <td><a href="/Home_Module/all_problem/?challenge={{tmp.challenge_code}}">{{tmp.challenge_name}}</a></td>
+                  <td>{{tmp.challenge_code}}</td>
+                  <td>{{tmp.start_time}}</td>
+                  <td>{{tmp.end_time}}</td>
+             </tr>
+          {% endfor %}
+        </table>
+
+        <h1>Future Contests</h1>
+        <table>
+            <tr>
+                <td><b>NAME</b></td>
+                <td><b>CODE</b></td>
+                <td><b>START TIME</b></td>
+                <td><b>END TIME</b></td>
+            </tr>
+          {% for tmp in temp1 %}
+              <tr>
+                  <td><a href="/Home_Module/all_problem/?challenge={{tmp.challenge_code}}">{{tmp.challenge_name}}</a></td>
+                  <td>{{tmp.challenge_code}}</td>
+                  <td>{{tmp.start_time}}</td>
+                  <td>{{tmp.end_time}}</td>
+             </tr>
+          {% endfor %}
+        </table>
+    
+        <h1>Past Contests</h1>
+        <table>
+            <tr>
+                <td><b>NAME</b></td>
+                <td><b>CODE</b></td>
+                <td><b>START TIME</b></td>
+                <td><b>END TIME</b></td>
+            </tr>
+          {% for tmp in temp3 %}
+              <tr>
+                  <td><a href="/Home_Module/all_problem/?challenge={{tmp.challenge_code}}">{{tmp.challenge_name}}</a></td>
+                  <td>{{tmp.challenge_code}}</td>
+                  <td>{{tmp.start_time}}</td>
+                  <td>{{tmp.end_time}}</td>
+             </tr>
+          {% endfor %}
+        </table>
+        </center>
+    </body>
+</html>
+{% endblock%}

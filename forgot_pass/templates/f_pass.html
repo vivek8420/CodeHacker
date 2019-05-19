@@ -1,0 +1,89 @@
+{% block content %}
+<html>
+<style>
+.main {
+  width:300px;
+    height:200px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+   padding: 50px;
+   margin:8px 0;
+   background-color:black;
+      border-radius: 8px;
+    border:2px solid green;
+}
+.tbox input{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  transition: 0.25s;
+   border-radius:50px;
+     margin:8px 0;
+   -webkit-transition: width 1s;
+    transition: width 1s;
+
+}
+.tbox  input[type="text"]:focus
+{
+  width: 250px;
+  border-color: #2ecc71;
+}
+.tbox input:hover{
+width: 30%;
+border-radius:50px;
+}
+input[type=submit] {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+   color: white;
+   background-color:SkyBlue;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+ opacity: 0.8;    
+  background: #2ecc71;
+  }
+
+label{
+  text-align: center;
+  font-size:17px;
+  color:SkyBlue;
+}
+.setcolor{
+  color:red;
+  font-size:30px;
+}
+.space{
+  height:140px;
+}
+</style>
+<body>
+<center>
+<div class="space"></div>
+<div class="setcolor">
+		{% if messages %}
+		{% for message in messages%}
+    {{ message}}
+		{% endfor%}
+	 {% endif%}
+</div>  
+</center>
+<div class="main">
+  <form action="/forgot_pass/send_email/" method="post">{% csrf_token %}
+    <label for=" id">Enter User_ID:</label>
+    <div class="tbox">
+      <input type="text" id="user_id" name="user_id" placeholder=" Enter User_ID" required>
+    </div>  
+    <input type="submit" value="verify">
+  </form>
+</div>
+</center>
+</body>
+</html>
+{% endblock %}

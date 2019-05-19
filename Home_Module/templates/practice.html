@@ -1,0 +1,40 @@
+{% extends 'header.html' %}
+{% block content %}
+<html>
+<head>
+<style>
+ table{
+                font-family: arial,sans-serif;
+                border-collapse: collapse;
+                width: 40%;
+            }
+            td,tr
+            {
+                border: 1px solid #dddddd;
+                padding: 30px;
+            }
+            body{
+                background-color: grey;
+            }
+ </style>           
+</head>
+<body>
+    <center>
+        <table>
+        <tr>
+            <td><h1>Name</h1></td>
+            <td><h1>Code</h1></td>
+            <td><h1>Difficulty</h1></td>
+        </tr>
+        {% for tmp in temp %}
+        <tr>
+            <td><a href='/Home_Module/practice/?problem={{tmp.problem_code}}'>{{tmp.problem_name}}</a></td>
+            <td>{{tmp.problem_code}}</td>
+            <td>{{tmp.difficulty}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </center>
+</body>
+</html>
+{%endblock%}

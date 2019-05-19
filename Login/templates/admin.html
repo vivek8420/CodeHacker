@@ -1,0 +1,36 @@
+{% extends 'header.html' %}
+{%block content %}
+<html>
+<head>
+<style>
+	button{
+	width: 200px;
+	padding: 12px 20px;
+	margin: 8px 0;
+    background-color: SkyBlue;
+    color: white;
+    cursor: pointer;
+	border-radius: 50px;
+	  font-size: 20px;
+}
+ button:hover {
+    opacity: 0.8;
+	background: #2ecc71;
+    }
+    body{
+    	background-color: black;
+    }
+</style>
+</head>
+<body>
+<center>
+<form action="/Login/add_problem.html" method="POST">{% csrf_token %}
+	<button type="submit">AddProblem</button>
+</form>
+<form action="/Login/add_compete.html" method="POST">{% csrf_token %}
+	<button type="submit">AddCompete</button>
+</form>
+</center>
+</body>
+</html>
+{% endblock%}

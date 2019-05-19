@@ -1,0 +1,77 @@
+
+{% block content %}
+<html>
+<head>
+<style>
+.main {
+  width:300px;
+    height:200px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    text-align:center;
+   padding: 50px;
+   margin:8px 0;
+   background-color:black;
+      border-radius: 8px;
+    border:2px solid green;
+}
+.tbox input{
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  transition: 0.25s;
+   border-radius:50px;
+     margin:8px 0;
+   -webkit-transition: width 1s;
+    transition: width 1s;
+}
+.tbox  input[type="text"]:focus
+{
+  width: 250px;
+  border-color: #2ecc71;
+}
+.tbox input:hover{
+width: 30%;
+border-radius:50px;
+}
+input[type=submit] {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 8px 0;
+   color: white;
+   background-color:SkyBlue;
+  font-size: 20px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+ opacity: 0.8;    
+  background: #2ecc71;
+  }
+
+label{
+  text-align: center;
+  font-size:17px;
+  color:SkyBlue;
+}
+.setcolor{
+  color:red;
+}	
+</style>
+</head>
+<div class="main">
+  <form action="/forgot_pass/otp_verify/" method="post">{% csrf_token %}
+    <h1><label for="otp">Enter OTP:</label></h1>
+    <div class="tbox">
+    <input type="text" id="otp" name="user_otp" placeholder="OTP" required><br><br>
+    <input type="hidden" name="otp" value="{{otp}}"/>
+    <input type="hidden" name="u_id" value="{{user_id}}"/>
+	</div>
+    <input type="submit" value="verify">
+  </form>
+</div>
+</body>
+</html>
+{% endblock %}
