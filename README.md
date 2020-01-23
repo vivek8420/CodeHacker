@@ -1,2 +1,2 @@
 # CodeHacker
-Competative Programming side
+Competitive Programming side
